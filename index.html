@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Table</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+</head>
+<body>
+     <div class="container">
+<h1>Student Data</h1>
+
+<form method="POST" name="sample">
+<br>
+    Roll No: <input type="number" name="rollno"> 
+    Name: <input type="text" name="name">
+    email: <input type="email" name="email">
+    phoneNo: <input type="number" name="phoneNo">
+    <br><br>
+    <input type="button" name="add" value="Add Data" onclick="addStudent();" class="btn btn-success"><hr>
+    <br><br>
+
+            <table id="tbl" class="table" border="1">
+                <thead>
+                <th>rollno</th> 
+                <th>Name</th>
+                <th>email</th>
+                <th>phoneNo</th>
+                </thead>               
+                 <tbody>
+                     
+                 </tbody>
+             </table>
+
+</form>
+</div>
+ <script type="text/javascript">
+       
+    function addStudent()
+    { 
+        let rollno=document.sample.rollno.value; 
+        let name=document.sample.name.value; 
+        let email=document.sample.name.value;
+        let phoneNo=document.sample.name.value;
+
+        let tr = document.createElement('tr');
+        
+        let td1 = tr.appendChild(document.createElement('td'));
+        let td2 = tr.appendChild(document.createElement('td'));
+        let td3 = tr.appendChild(document.createElement('td'));
+        let td4 = tr.appendChild(document.createElement('td'));
+        
+        
+        td1.innerHTML=rollno;
+        td2.innerHTML=name;
+        td3.innerHTML=email;
+        td4.innerHTML=email;
+
+        document.getElementById("tbl").appendChild(tr);
+    }
+ 
+    </script>
+
+    </body>
+</html>
+
+
